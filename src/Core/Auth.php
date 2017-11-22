@@ -16,12 +16,14 @@ class Auth implements AuthContract
     protected $host;
     protected $username;
     protected $password;
+    protected $port;
 
-    function __construct($host, $username, $password)
+    function __construct($host, $username, $password, $port = 8728)
     {
         $this->host = $host;
         $this->username = $username;
         $this->password = $password;
+        $this->port = $port;
     }
 
     public function getHost()
@@ -41,5 +43,10 @@ class Auth implements AuthContract
         }
 
         return bcrypt($this->password);
+    }
+
+    public function getPort()
+    {
+        return $this->port;
     }
 }

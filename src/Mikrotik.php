@@ -123,8 +123,8 @@ class Mikrotik
     private function getClient(Auth $auth)
     {
         try {
-            $this->client = new Client(...
-                [$this->auth->getHost(), $this->auth->getUsername(), $this->auth->getPassword(true)]);
+            $this->client = new Client(
+                ...[$this->auth->getHost(), $this->auth->getUsername(), $this->auth->getPassword(true), $this->auth->getPort()]);
 
             $this->connected = true;
 
