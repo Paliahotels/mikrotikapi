@@ -16,9 +16,9 @@ class Auth implements AuthContract
     protected $host;
     protected $username;
     protected $password;
-    protected $port = 8728;
+    protected $port;
 
-    function __construct($host, $username, $password, $port)
+    function __construct($host, $username, $password, $port = 8727)
     {
         $this->host = $host;
         $this->username = $username;
