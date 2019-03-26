@@ -18,7 +18,7 @@ Or manually insert this block into your composer.json in require section:
 Configuration on Laravel:
 ----
 
-Insert into `app/config.php` in `providers` array:
+Insert into `config/app.php` in `providers` array:
 
 ```
 jjsquady\MikrotikApi\MikrotikServiceProvider::class
@@ -29,7 +29,7 @@ jjsquady\MikrotikApi\MikrotikServiceProvider::class
 Insert into `app/config.php` in `facades` array:
 
 ```
-'Mikrokit' => jjsquady\MikrotikApi\Facades\MikrotikFacade::class
+'Mikrotik' => jjsquady\MikrotikApi\Facades\MikrotikFacade::class
 ```
 
 Basic Usage:
@@ -39,7 +39,7 @@ Basic Usage:
 
 // create a connection with Mikrotik Router
 
-$conn = Mikrokit::connect(['<host_ip>', '<username', '<password>']);
+$conn = Mikrotik::connect(['<host_ip>', '<username', '<password>']);
  
 if($conn->isConnected()) {
     // you have access to Commands
@@ -50,7 +50,7 @@ if($conn->isConnected()) {
 Getting interfaces:
 ---
 ```$php
-$conn = Mikrokit::connect(['<host_ip>', '<username', '<password>']);
+$conn = Mikrotik::connect(['<host_ip>', '<username', '<password>']);
  
 if($conn->isConnected()) {
     $iComm = new InterfaceCommand($conn);
